@@ -1,63 +1,82 @@
 {
-  "address": "coUnmi3oBUtwtd9fjeAvSsJssXh5A5xyPbhpewyzRVF",
+  "address": "GTG7WyLrVDCYDj7XprvfZWDjFpDcjsJ7VAAssXkY2SqE",
   "metadata": {
-    "name": "Nft2",
+    "name": "nft2",
     "version": "0.1.0",
     "spec": "0.1.0",
     "description": "Created with Anchor"
   },
   "instructions": [
     {
-      "name": "close",
-      "discriminator": [98, 165, 201, 177, 108, 65, 206, 96],
+      "name": "buy_nft",
+      "discriminator": [
+        96,
+        0,
+        28,
+        190,
+        49,
+        107,
+        83,
+        222
+      ],
       "accounts": [
         {
-          "name": "payer",
+          "name": "buyer",
           "writable": true,
           "signer": true
         },
         {
-          "name": "Nft2",
+          "name": "seller",
           "writable": true
-        }
-      ],
-      "args": []
-    },
-    {
-      "name": "decrement",
-      "discriminator": [106, 227, 168, 59, 248, 27, 150, 101],
-      "accounts": [
-        {
-          "name": "Nft2",
-          "writable": true
-        }
-      ],
-      "args": []
-    },
-    {
-      "name": "increment",
-      "discriminator": [11, 18, 104, 9, 104, 174, 59, 33],
-      "accounts": [
-        {
-          "name": "Nft2",
-          "writable": true
-        }
-      ],
-      "args": []
-    },
-    {
-      "name": "initialize",
-      "discriminator": [175, 175, 109, 31, 13, 152, 155, 237],
-      "accounts": [
-        {
-          "name": "payer",
-          "writable": true,
-          "signer": true
         },
         {
-          "name": "Nft2",
+          "name": "seller_token_account",
+          "writable": true
+        },
+        {
+          "name": "buyer_token_account",
+          "writable": true
+        },
+        {
+          "name": "nft_mint",
+          "writable": true
+        },
+        {
+          "name": "nft_data",
           "writable": true,
-          "signer": true
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  108,
+                  108,
+                  95,
+                  110,
+                  102,
+                  116,
+                  95,
+                  100,
+                  97,
+                  116,
+                  97
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "nft_mint"
+              }
+            ]
+          }
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "associated_token_program",
+          "address": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL"
         },
         {
           "name": "system_program",
@@ -67,37 +86,379 @@
       "args": []
     },
     {
-      "name": "set",
-      "discriminator": [198, 51, 53, 241, 116, 29, 126, 194],
+      "name": "init_marketplace_accounts",
+      "discriminator": [
+        176,
+        102,
+        135,
+        192,
+        37,
+        38,
+        126,
+        90
+      ],
       "accounts": [
         {
-          "name": "Nft2",
+          "name": "signer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "listnftdata",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  97,
+                  114,
+                  107,
+                  101,
+                  116,
+                  112,
+                  108,
+                  97,
+                  99,
+                  101,
+                  95,
+                  102,
+                  111,
+                  114,
+                  95,
+                  110,
+                  102,
+                  116
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "list_for_sale",
+      "discriminator": [
+        188,
+        214,
+        1,
+        112,
+        93,
+        215,
+        124,
+        207
+      ],
+      "accounts": [
+        {
+          "name": "signer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "listed_nft_address",
           "writable": true
+        },
+        {
+          "name": "nft_data",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  108,
+                  108,
+                  95,
+                  110,
+                  102,
+                  116,
+                  95,
+                  100,
+                  97,
+                  116,
+                  97
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "listed_nft_address"
+              }
+            ]
+          }
+        },
+        {
+          "name": "listnftdata",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  97,
+                  114,
+                  107,
+                  101,
+                  116,
+                  112,
+                  108,
+                  97,
+                  99,
+                  101,
+                  95,
+                  102,
+                  111,
+                  114,
+                  95,
+                  110,
+                  102,
+                  116
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
         }
       ],
       "args": [
         {
-          "name": "value",
-          "type": "u8"
+          "name": "price",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "mint_nft",
+      "discriminator": [
+        211,
+        57,
+        6,
+        167,
+        15,
+        219,
+        35,
+        251
+      ],
+      "accounts": [
+        {
+          "name": "mint",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "metadata",
+          "writable": true
+        },
+        {
+          "name": "token_account",
+          "writable": true
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        },
+        {
+          "name": "associated_token_program",
+          "address": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL"
+        },
+        {
+          "name": "nft_data",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  108,
+                  108,
+                  95,
+                  110,
+                  102,
+                  116,
+                  95,
+                  100,
+                  97,
+                  116,
+                  97
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "mint"
+              }
+            ]
+          }
+        },
+        {
+          "name": "token_metadata_program"
+        },
+        {
+          "name": "rent",
+          "address": "SysvarRent111111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "_name",
+          "type": "string"
+        },
+        {
+          "name": "_symbol",
+          "type": "string"
+        },
+        {
+          "name": "_image_url",
+          "type": "string"
         }
       ]
     }
   ],
   "accounts": [
     {
-      "name": "Nft2",
-      "discriminator": [255, 176, 4, 245, 188, 253, 124, 25]
+      "name": "AllNftData",
+      "discriminator": [
+        91,
+        203,
+        233,
+        176,
+        179,
+        184,
+        180,
+        201
+      ]
+    },
+    {
+      "name": "NftListedOnMarket",
+      "discriminator": [
+        190,
+        211,
+        162,
+        57,
+        135,
+        35,
+        223,
+        236
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "OwnerDoesNotMatched",
+      "msg": "Owner Does Not Matched"
+    },
+    {
+      "code": 6001,
+      "name": "NotValidPrice",
+      "msg": "Please enter valid price"
+    },
+    {
+      "code": 6002,
+      "name": "NotListedNft",
+      "msg": "nft is not listed"
     }
   ],
   "types": [
     {
-      "name": "Nft2",
+      "name": "AllNftData",
       "type": {
         "kind": "struct",
         "fields": [
           {
-            "name": "count",
-            "type": "u8"
+            "name": "nft_address",
+            "type": "pubkey"
+          },
+          {
+            "name": "owner",
+            "type": "pubkey"
+          },
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "symbol",
+            "type": "string"
+          },
+          {
+            "name": "image_url",
+            "type": "string"
+          },
+          {
+            "name": "metadata",
+            "type": "pubkey"
+          },
+          {
+            "name": "is_listed",
+            "type": "bool"
+          },
+          {
+            "name": "price",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "NftListedOnMarket",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "nft_address",
+            "type": {
+              "vec": "pubkey"
+            }
+          },
+          {
+            "name": "owner",
+            "type": {
+              "vec": "pubkey"
+            }
+          },
+          {
+            "name": "name",
+            "type": {
+              "vec": "string"
+            }
+          },
+          {
+            "name": "symbol",
+            "type": {
+              "vec": "string"
+            }
+          },
+          {
+            "name": "image_url",
+            "type": {
+              "vec": "string"
+            }
+          },
+          {
+            "name": "price",
+            "type": {
+              "vec": "u64"
+            }
           }
         ]
       }
