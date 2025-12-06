@@ -1,0 +1,9 @@
+/Users/priyanbabariya/Downloads/Nft2 2/anchor/target/sbpf-solana-solana/release/deps/libsolana_system_interface-96fe1817ad17ad22.rmeta: /Users/priyanbabariya/.cargo/registry/src/index.crates.io-6f17d22bba15001f/solana-system-interface-1.0.0/src/lib.rs /Users/priyanbabariya/.cargo/registry/src/index.crates.io-6f17d22bba15001f/solana-system-interface-1.0.0/src/error.rs /Users/priyanbabariya/.cargo/registry/src/index.crates.io-6f17d22bba15001f/solana-system-interface-1.0.0/src/instruction.rs
+
+/Users/priyanbabariya/Downloads/Nft2 2/anchor/target/sbpf-solana-solana/release/deps/libsolana_system_interface-96fe1817ad17ad22.rlib: /Users/priyanbabariya/.cargo/registry/src/index.crates.io-6f17d22bba15001f/solana-system-interface-1.0.0/src/lib.rs /Users/priyanbabariya/.cargo/registry/src/index.crates.io-6f17d22bba15001f/solana-system-interface-1.0.0/src/error.rs /Users/priyanbabariya/.cargo/registry/src/index.crates.io-6f17d22bba15001f/solana-system-interface-1.0.0/src/instruction.rs
+
+/Users/priyanbabariya/Downloads/Nft2 2/anchor/target/sbpf-solana-solana/release/deps/solana_system_interface-96fe1817ad17ad22.d: /Users/priyanbabariya/.cargo/registry/src/index.crates.io-6f17d22bba15001f/solana-system-interface-1.0.0/src/lib.rs /Users/priyanbabariya/.cargo/registry/src/index.crates.io-6f17d22bba15001f/solana-system-interface-1.0.0/src/error.rs /Users/priyanbabariya/.cargo/registry/src/index.crates.io-6f17d22bba15001f/solana-system-interface-1.0.0/src/instruction.rs
+
+/Users/priyanbabariya/.cargo/registry/src/index.crates.io-6f17d22bba15001f/solana-system-interface-1.0.0/src/lib.rs:
+/Users/priyanbabariya/.cargo/registry/src/index.crates.io-6f17d22bba15001f/solana-system-interface-1.0.0/src/error.rs:
+/Users/priyanbabariya/.cargo/registry/src/index.crates.io-6f17d22bba15001f/solana-system-interface-1.0.0/src/instruction.rs:
